@@ -1,9 +1,8 @@
 # Recommendation widget
 
 ## How to use
-Put this code into <head> part
-
-`
+Put this code into <head> part:
+```
     <script
     app_apikey="..."
     app_type="desktop"
@@ -15,10 +14,10 @@ Put this code into <head> part
     src="../src/main.js"
     type="module"
     ></script>
-`
+```
 
 Example:
-`    
+```    
     <script
             app_apikey="f9040ab1b9c802857aa783c469d0e0ff7e7366e4"
             app_type="desktop"
@@ -30,12 +29,11 @@ Example:
             src="../src/main.js"
             type="module"
     ></script>
-`
+```
 
 And this code into your body part:
-
-`
+```
     <div id="taboola-recommendations"></div>
-`
+```
 
 Recommendations will be inside div with id="taboola-recommendations"
