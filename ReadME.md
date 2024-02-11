@@ -37,3 +37,5 @@ And this code into your body part:
 ```
 
 Recommendations will be inside div with id="taboola-recommendations"
+
+In ./demo/index.html you can see an example.
