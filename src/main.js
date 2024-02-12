@@ -18,5 +18,7 @@ if (root) {
   new Widget(scriptParameters).render().then((widget) => {
     if (widget) root.appendChild(widget)
   })
+} else {
+  console.log("The taboola-recommendations element was not found")
 }
 
