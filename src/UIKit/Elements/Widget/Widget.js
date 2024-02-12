@@ -20,6 +20,7 @@ export class Widget {
           image: row.thumbnail[0].url,
           content: row.description,
           footer: row.branding,
+          origin: row.origin,
         }).render()
       })
       return new Promise((resolve) => resolve(

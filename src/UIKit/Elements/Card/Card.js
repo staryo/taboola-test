@@ -1,12 +1,13 @@
 export class Card {
   constructor(params) {
-    const { id, href, header, image, content, footer } = params
+    const { id, href, header, image, content, footer, origin } = params
     this.id = id
     this.href = href
     this.header = header
     this.image = image
     this.content = content
     this.footer = footer
+    this.origin = origin
   }
 
   render() {
@@ -34,7 +35,7 @@ export class Card {
     cardContent.appendChild(cardHeader)
     const cardText = document.createElement("a")
     cardText.href = this.href
-    cardText.target = "_blank"
+    if (this.origin === "sponsored") cardText.target = "_blank"
     cardText.textContent = this.footer
     cardContent.appendChild(cardText)
 
