@@ -13,12 +13,16 @@ Object.keys(currentScript.attributes).forEach((key) => {
     scriptParameters[currentScript.attributes[key].name] = currentScript.attributes[key].textContent
 })
 
-const root = document.getElementById("taboola-recommendations")
-if (root) {
+const isElementLoaded = async () => {
+  while ( document.getElementById("taboola-recommendations") === null) {
+    console.log('check')
+    await new Promise( resolve =>  requestAnimationFrame(resolve) )
+  }
+  return document.getElementById("taboola-recommendations");
+};
+
+isElementLoaded().then((root) => {
   new Widget(scriptParameters).render().then((widget) => {
     if (widget) root.appendChild(widget)
   })
-} else {
-  console.log("The taboola-recommendations element was not found")
-}
-
+});
