@@ -1,4 +1,4 @@
-import { Card } from "../src/UIKit/Elements/Card/Card";
+import { Card } from "../src/view/Elements/Card/Card";
 
 test("get card", async () => {
   const card = await new Card({

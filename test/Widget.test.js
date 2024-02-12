@@ -1,4 +1,4 @@
-import { Widget } from "../src/UIKit/Elements/Widget/Widget";
+import { Widget } from "../src/view/Elements/Widget/Widget";
 
 test("get 10 recommendations", async () => {
   const widget = new Widget({

@@ -1,4 +1,4 @@
-import { Widget } from "./UIKit/Elements/Widget/Widget.js";
+import { Widget } from "./view/Elements/Widget/Widget.js";
 
 const cssModule = await import("./main.css", {
   assert: { type: "css" },

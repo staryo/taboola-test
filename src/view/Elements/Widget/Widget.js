@@ -1,5 +1,6 @@
 import { Card } from "../Card/Card.js";
 import { Grid } from "../../Layouts/Grid/Grid.js";
+import { fetchRecommendations } from "../../../api/taboolaApi.js";
 
 const TABOOLA_API_URL = "http://api.taboola.com/1.0/json/taboola-templates/recommendations.get"
 
@@ -11,7 +12,7 @@ export class Widget {
 
   async render() {
     try {
-      const recommendationsList = await this.fetchRecommendations()
+      const recommendationsList = await fetchRecommendations(this.fetchURL)
       const cards = recommendationsList.map((row) => {
         return new Card({
           id: row.id,
@@ -28,16 +29,6 @@ export class Widget {
       ))
     } catch (e) {
       console.log(e)
-    }
-  }
-
-  async fetchRecommendations() {
-    try {
-      const response = await fetch(this.fetchURL)
-      const jsonResponse = await response.json()
-      return new Promise((resolve) => resolve(jsonResponse.list))
-    } catch (e) {
-      return new Promise((_, reject) => reject(e))
     }
   }
 }

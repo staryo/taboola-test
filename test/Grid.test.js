@@ -1,5 +1,5 @@
-import { Card } from "../src/UIKit/Elements/Card/Card";
-import { Grid } from "../src/UIKit/Layouts/Grid/Grid";
+import { Card } from "../src/view/Elements/Card/Card";
+import { Grid } from "../src/view/Layouts/Grid/Grid";
 
 test("get grid", async () => {
   const cards = []
