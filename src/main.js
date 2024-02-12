@@ -15,8 +15,7 @@ Object.keys(currentScript.attributes).forEach((key) => {
 
 const isElementLoaded = async () => {
   while ( document.getElementById("taboola-recommendations") === null) {
-    console.log('check')
-    await new Promise( resolve =>  requestAnimationFrame(resolve) )
+    setTimeout(() => {}, 1000)
   }
   return document.getElementById("taboola-recommendations");
 };
