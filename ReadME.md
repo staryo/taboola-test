@@ -11,7 +11,7 @@ Put this code into <head> part:
     source_id="..."
     source_type="video"
     source_url="..."
-    src="../src/main.js"
+    src="https://staryo.github.io/taboola-test/src/main.js"
     type="module"
 ></script>
 ```
@@ -26,7 +26,7 @@ Example:
     source_id="214321562187"
     source_type="video"
     source_url="http://www.site.com/videos/214321562187.html"
-    src="../src/main.js"
+    src="https://staryo.github.io/taboola-test/src/main.js"
     type="module"
 ></script>
 ```
