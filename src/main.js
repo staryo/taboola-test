@@ -13,14 +13,18 @@ Object.keys(currentScript.attributes).forEach((key) => {
     scriptParameters[currentScript.attributes[key].name] = currentScript.attributes[key].textContent
 })
 
-const isElementLoaded = async () => {
-  while ( document.getElementById("taboola-recommendations") === null) {
-    setTimeout(() => {}, 1000)
-  }
-  return document.getElementById("taboola-recommendations");
+const elementLoaded = () => {
+  return new Promise((resolve) => {
+    const check = () => {
+      if (document.getElementById("taboola-recommendations") !== null) {
+        resolve(document.getElementById("taboola-recommendations"))
+      } else setTimeout(check, 1000)
+    }
+    check()
+  })
 };
 
-isElementLoaded().then((root) => {
+elementLoaded().then((root) => {
   new Widget(scriptParameters).render().then((widget) => {
     if (widget) root.appendChild(widget)
   })

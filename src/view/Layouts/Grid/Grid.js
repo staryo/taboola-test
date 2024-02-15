@@ -1,14 +1,15 @@
-export class Grid {
-    constructor({ children }) {
-        this.children = children
+import { AbstractLayout } from "../AbstractLayout.js";
+
+export class Grid extends AbstractLayout{
+    constructor({ children, classes }) {
+        classes = [...classes, "Grid"]
+        super({children, classes})
     }
 
-    render() {
-        const gridElement = document.createElement("div")
-        gridElement.classList.add("Grid")
-        this.children.forEach((child) => {
-            gridElement.appendChild(child)
-        })
-        return gridElement
+}
+
+export class GridMain extends Grid {
+    constructor({children}) {
+        super({children, classes: []});
     }
 }

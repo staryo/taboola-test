@@ -1,5 +1,5 @@
 import { Card } from "../src/view/Elements/Card/Card";
-import { Grid } from "../src/view/Layouts/Grid/Grid";
+import { GridMain } from "../src/view/Layouts/Grid/Grid";
 
 test("get grid", async () => {
   const cards = []
@@ -14,6 +14,6 @@ test("get grid", async () => {
     })
     cards.push(await card.render())
   }
-  const gridElement = new Grid({ children: cards }).render()
+  const gridElement = new GridMain({ children: cards }).render()
   expect(gridElement.children.length).toStrictEqual(100)
 });

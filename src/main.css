@@ -1,6 +1,6 @@
 .Card {
     border-radius: 5px;
-    --img-scale: 1.01;
+    --img-scale: 1;
     --title-color: black;
     --link-icon-opacity: 0;
     position: relative;
