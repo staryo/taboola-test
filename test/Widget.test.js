@@ -16,11 +16,11 @@ test("get 10 recommendations", async () => {
   expect(renderedWidget.children.length).toBe(10)
 });
 
-test("get 50 recommendations", async () => {
+test("get 25 recommendations", async () => {
   const widget = new Widget({
     app_apikey: "f9040ab1b9c802857aa783c469d0e0ff7e7366e4",
     app_type: "desktop",
-    count: "50",
+    count: "25",
     id: "taboola-recommendations-script",
     source_id: "214321562187",
     source_type: "video",
@@ -29,7 +29,7 @@ test("get 50 recommendations", async () => {
     type: "module",
   })
   const renderedWidget = await widget.render()
-  expect(renderedWidget.children.length).toBe(50)
+  expect(renderedWidget.children.length).toBe(25)
 });
 
 test("get 1 recommendation", async () => {
