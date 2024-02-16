@@ -1,4 +1,4 @@
-export function imageExists(image_url) {
+export async function imageExists(image_url) {
 
   const http = new XMLHttpRequest();
   try {
@@ -9,4 +9,14 @@ export function imageExists(image_url) {
     return false
   }
 
+}
+
+
+export async function asyncImageExists(imgUrl) {
+  return new Promise(res => {
+    const image = new Image();
+    image.onload = () => res(true);
+    image.onerror = () => res(false);
+    image.src = imgUrl;
+  });
 }
